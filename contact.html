@@ -727,8 +727,8 @@
         var form = document.getElementById("quotationForm");
         form.addEventListener("keypress", function (e) {
           if (e.key === "Enter") {
-            e.preventDefault(); // Ngăn chặn hành động mặc định khi nhấn Enter
-            form.querySelector('[type="submit"]').click(); // Kích hoạt click nút Submit
+            e.preventDefault();
+            form.querySelector('[type="submit"]').click();
           }
         });
       });
