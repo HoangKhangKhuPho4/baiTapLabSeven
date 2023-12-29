@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Kitchen Cleaning | Bootstrap 5 Theme</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+
+    <link href="css/tooplate-clean-work.css" rel="stylesheet" />
+    <!--
+
+Tooplate 2132 Clean Work
+
+https://www.tooplate.com/view/2132-clean-work
+
+Free Bootstrap 5 HTML Template
+
+-->
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <style>
+      #backToTopBtn {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      #backToTopBtn:hover {
+        background-color: #0056b3;
+      }
+
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+      body {
+        top: 0px !important;
+      }
+      .goog-te-gadget-icon {
+        background-image: url("//translate.google.com/favicon.ico") !important;
+      }
+
+      /* CSS để căn chỉnh và tạo khoảng cách cho Google Translate */
+      #google_translate_element {
+        margin-top: 20px; /* Tạo khoảng cách phía trên */
+        margin-right: 20px; /* Tạo khoảng cách phía bên phải */
+        margin-bottom: 20px; /* Tạo khoảng cách phía dưới nếu cần */
+        margin-left: 20px; /* Tạo khoảng cách phía bên trái nếu cần */
+        display: inline-block; /* Đảm bảo widget không chiếm toàn bộ chiều rộng */
+      }
+
+      /* Bạn cũng có thể cần chỉnh sửa cho responsive */
+      @media (max-width: 768px) {
+        #google_translate_element {
+          margin-top: 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+        }
+      }
+
+      /* Headings */
+      h1 {
+        font-size: 29px; /* Largest heading */
+        color: #333333; /* Dark color for contrast */
+      }
+
+      h2 {
+        font-size: 24px; /* Medium heading */
+        color: #333333;
+      }
+
+      h4 {
+        font-size: 18px; /* Smallest heading */
+        color: #333333;
+      }
+
+      /* Body Text */
+      p {
+        font-size: 14px; /* Standard body text size */
+        color: #333333; /* Dark color for readability */
+      }
+
+      /* Links */
+      a {
+        color: #007bff; /* Blue color for links */
+      }
+
+      a:hover {
+        color: #0056b3; /* Darker shade for hover state */
+      }
+
+      /* Buttons and Interactive Elements */
+      button,
+      .button,
+      .nav-link,
+      .custom-btn {
+        color: white; /* White text for buttons and links */
+      }
+
+      /* Responsive Font Sizes for smaller devices */
+      @media only screen and (max-width: 768px) {
+        h1 {
+          font-size: 24px; /* Slightly smaller size for mobile */
+        }
+        h2 {
+          font-size: 20px;
+        }
+        h4 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px; /* Smaller size for mobile */
+        }
+      }
+    </style>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body>
+    <button id="backToTopBtn" title="Go to top">⬆️</button>
+    <header class="site-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 d-flex flex-wrap">
+            <p class="d-flex me-4 mb-0">
+              <i class="bi-house-fill me-2"></i>
+              One-Stop Cleaning Service
+            </p>
+
+            <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
+              <i class="bi-clock-fill me-2"></i>
+              <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
+            </p>
+
+            <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
+              <i class="site-header-icon bi-whatsapp me-2"></i>
+
+              <a href="tel: +84-56-7649206 " class="text-white"
+                >+84-56-7649206</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/bubbles.png" class="logo img-fluid" alt="" />
+
+          <span class="ms-2">Clean Work</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#section_5"
+                id="navbarLightDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Pages</a
+              >
+
+              <ul
+                class="dropdown-menu dropdown-menu-light"
+                aria-labelledby="navbarLightDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="services.html">Our Services</a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="coming-soon.html"
+                    >Coming Soon</a
+                  >
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="page-404.html">Page 404</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Back To Home</a>
+            </li>
+
+            <li class="nav-item ms-3">
+              <a
+                class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn"
+                href="#"
+                onclick="showKitchenCleaningGuide()"
+                >Get started</a
+              >
+            </li>
+          </ul>
+
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section
+        class="banner-section d-flex justify-content-center align-items-end"
+      >
+        <div class="section-overlay"></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-12">
+              <h1 class="text-white mb-lg-0">Kitchen Cleaning</h1>
+            </div>
+
+            <div
+              class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto"
+            >
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Kitchen Cleaning
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phần Back-end cho learnmore -->
+      <!-- <section class="services-detail-section section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <div class="services-image-wrap">
+                <img
+                  src="images/services/people-taking-care-office-cleaning.jpg"
+                  class="services-image img-fluid"
+                  alt=""
+                />
+                <img
+                  src="images/services/person-taking-care-office.jpg"
+                  class="services-image services-image-hover img-fluid"
+                  alt=""
+                />
+
+                <div class="services-icon-wrap">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <p class="text-white mb-0">
+                      <i class="bi-cash me-2"></i>
+                      $820
+                    </p>
+
+                    <p class="text-white mb-0">
+                      <i class="bi-clock-fill me-2"></i>
+                      5 hrs
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-info px-4 pt-4">
+                <h2 class="mb-4">Office Cleaning</h2>
+
+                <p>
+                  Please tell your friends about Tooplate's
+                  <a href="#">free HTML templates</a>. Thank you for choosing
+                  our templates for your work.
+                </p>
+
+                <h6 class="mt-4">Affordable Service</h6>
+
+                <p>
+                  Clean Work is free Bootstrap v.5.1.3 HTML CSS template
+                  provided by Tooplate. You can use this layout for a commercial
+                  purpose.
+                </p>
+
+                <h6>Expert Team</h6>
+
+                <p>
+                  You are not allowed to redistribute this clean work HTML
+                  template's <a href="#">downloadable ZIP file</a> on any other
+                  template website. Please contact us for more info. Thank you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <section class="services-detail-section section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <div class="services-image-wrap">
+                <img
+                  src="images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg"
+                  class="services-image img-fluid"
+                  alt="Young woman cleaning a stove in a kitchen"
+                />
+                <img
+                  src="images/services/woman-holding-rag-detergent-cleaning-cooker.jpg"
+                  class="services-image services-image-hover img-fluid"
+                  alt="Woman cleaning a cooker in a kitchen"
+                />
+                <div class="services-icon-wrap">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <p class="text-white mb-0">
+                      <i class="bi-cash me-2"></i>
+                      $640
+                    </p>
+                    <p class="text-white mb-0">
+                      <i class="bi-clock-fill me-2"></i>
+                      4 hrs
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <div class="services-info px-4 pt-4">
+                <h2 class="mb-4">Kitchen Cleaning</h2>
+
+                <p>
+                  Our kitchen cleaning service offers thorough and dedicated
+                  cleaning for your home or restaurant kitchen. We focus on deep
+                  cleaning kitchen appliances, surfaces, and floors to ensure a
+                  clean and sterilized kitchen environment.
+                </p>
+
+                <h6 class="mt-4">Comprehensive Cleaning Techniques</h6>
+
+                <p>
+                  We use various techniques to tackle stubborn grease and dirt,
+                  including steam cleaning and non-scratch scrubbing. Our
+                  service covers everything from ovens to refrigerators,
+                  ensuring every nook and cranny of your kitchen sparkles clean.
+                </p>
+
+                <h6>Focus on Health and Environmental Friendliness</h6>
+
+                <p>
+                  Your kitchen's health is our top priority. We use safe,
+                  environmentally friendly cleaning products with germ-killing
+                  abilities without leaving harmful residues, keeping your
+                  kitchen safe for food preparation and consumption.
+                </p>
+
+                <p>
+                  Ready for a clean and sparkling kitchen? Contact us at [Phone
+                  Number] or book online. Our professional team is ready to
+                  bring beauty to your kitchen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding pt-0">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4">Photo gallery</h2>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-12">
+              <a
+                href="images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg"
+                class="image-popup"
+              >
+                <img
+                  src="images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg"
+                  class="gallery-image img-fluid"
+                />
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-12 my-4 my-lg-0 my-md-0">
+              <a href="images/disinfecting-home.jpg" class="image-popup">
+                <img
+                  src="images/disinfecting-home.jpg"
+                  class="gallery-image img-fluid"
+                />
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-12">
+              <a
+                href="images/essential-goods-during-epidemic-prevention-protection.jpg"
+                class="image-popup"
+              >
+                <img
+                  src="images/essential-goods-during-epidemic-prevention-protection.jpg"
+                  class="gallery-image img-fluid"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4">Related Services</h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-thumb mb-lg-0">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="services-image-wrap">
+                      <a href="kitchen-detail.html">
+                        <img
+                          src="images/services/man-polishing-car-inside-car-service.jpg"
+                          class="services-image img-fluid"
+                          alt=""
+                        />
+                        <img
+                          src="images/services/man-polishing-car-inside.jpg"
+                          class="services-image services-image-hover img-fluid"
+                          alt=""
+                        />
+
+                        <div class="services-icon-wrap">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <p class="text-white mb-0">
+                              <i class="bi-cash me-2"></i>
+                              $240
+                            </p>
+
+                            <p class="text-white mb-0">
+                              <i class="bi-clock-fill me-2"></i>
+                              2 hrs
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-7 col-md-7 col-12 d-flex align-items-center"
+                  >
+                    <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                      <h4 class="services-title mb-1 mb-lg-2">
+                        <a class="services-title-link" href="car_washing.html"
+                          >Car Washing</a
+                        >
+                      </h4>
+
+                      <p>
+                        Best Cleaning Service Provider Ipsum dolor sit
+                        consectetur kengan
+                      </p>
+
+                      <div class="d-flex flex-wrap align-items-center">
+                        <div class="reviews-icons">
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                        </div>
+
+                        <a
+                          href="car_washing.html"
+                          class="custom-btn btn button button--atlas mt-2 ms-auto"
+                        >
+                          <span>Learn More</span>
+
+                          <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-thumb mb-lg-0">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="services-image-wrap">
+                      <a href="kitchen-detail.html">
+                        <img
+                          src="images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg"
+                          class="services-image img-fluid"
+                          alt=""
+                        />
+                        <img
+                          src="images/services/close-up-mop-cleaning-industrial-plant-floor.jpg"
+                          class="services-image services-image-hover img-fluid"
+                          alt=""
+                        />
+
+                        <div class="services-icon-wrap">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <p class="text-white mb-0">
+                              <i class="bi-cash me-2"></i>
+                              $6,800
+                            </p>
+
+                            <p class="text-white mb-0">
+                              <i class="bi-clock-fill me-2"></i>
+                              30 hrs
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-7 col-md-7 col-12 d-flex align-items-center"
+                  >
+                    <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                      <h4 class="services-title mb-1 mb-lg-2">
+                        <a class="services-title-link" href="factory.html"
+                          >Factory Cleaning</a
+                        >
+                      </h4>
+
+                      <p>
+                        Best Cleaning Service Provider Ipsum dolor sit
+                        consectetur kengan
+                      </p>
+
+                      <div class="d-flex flex-wrap align-items-center">
+                        <div class="reviews-icons">
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star"></i>
+                        </div>
+
+                        <a
+                          href="factory.html"
+                          class="custom-btn btn button button--atlas mt-2 ms-auto"
+                        >
+                          <span>Learn More</span>
+
+                          <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners-section">
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12 col-12">
+              <h4 class="partners-section-title bg-white shadow-lg">
+                Trusted by companies
+              </h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/glorix.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/rolf-leasing.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/woocommerce.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/toprak-leasing.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/unilabs.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
+            <div>
+              <img src="images/bubbles.png" class="logo img-fluid" alt="" />
+            </div>
+
+            <ul class="footer-menu d-flex flex-wrap ms-5">
+              <li class="footer-menu-item">
+                <a href="about.html" class="footer-menu-link">About Us</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Blog</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Reviews</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="contact.html" class="footer-menu-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+            <h5 class="site-footer-title mb-3">Our Services</h5>
+
+            <ul class="footer-menu">
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  House Cleaning
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="car_washing.html" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Car Washing
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Laundry
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="services-detail.html" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Office Cleaning
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Toilet Cleaning
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+            <h5 class="site-footer-title mb-3">Office</h5>
+
+            <p class="text-white d-flex mt-3 mb-2">
+              <i class="bi-geo-alt-fill me-2"></i>
+              Neighborhood 4, Phuoc Dan Town, Ninh Phuoc District, Ninh Thuan
+              Province
+            </p>
+
+            <p class="text-white d-flex mb-2">
+              <i class="bi-telephone-fill me-2"></i>
+
+              <a href="tel: +84-56-7649206" class="site-footer-link">
+                +84-56-7649206
+              </a>
+            </p>
+
+            <p class="text-white d-flex">
+              <i class="bi-envelope-fill me-2"></i>
+
+              <a
+                href="mailto:22130116@st.hcmuaf.edu.vn"
+                class="site-footer-link"
+              >
+                22130116@st.hcmuaf.edu.vn
+              </a>
+            </p>
+
+            <ul class="social-icon mt-4">
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link button button--skoll">
+                  <span></span>
+                  <span class="bi-twitter"></span>
+                </a>
+              </li>
+
+              <li class="social-icon-item">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088292157574"
+                  class="social-icon-link button button--skoll"
+                >
+                  <span></span>
+                  <span class="bi-facebook"></span>
+                </a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link button button--skoll">
+                  <span></span>
+                  <span class="bi-instagram"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-6 mt-3 mt-lg-0 mt-md-0">
+            <div class="featured-block">
+              <h5 class="text-white mb-3">Service Hours</h5>
+
+              <strong class="d-block text-white mb-1">Mon - Fri</strong>
+
+              <p class="text-white mb-3">8:00 AM - 5:30 PM</p>
+
+              <strong class="d-block text-white mb-1">Sat</strong>
+
+              <p class="text-white mb-0">6:00 AM - 2:30 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <p class="copyright-text mb-0">
+                © Copyright 2023 by Hoang Khang. All Rights Reserved
+                22130116@st.hcmuaf.edu.vn
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-12 text-end">
+              <p class="copyright-text mb-0">
+                Designed by
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088292157574"
+                  target="_parent"
+                  >Nguyễn Lê Hoàng Khang</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+      window.addEventListener("mouseover", initLandbot, { once: true });
+      window.addEventListener("touchstart", initLandbot, { once: true });
+      var myLandbot;
+      function initLandbot() {
+        if (!myLandbot) {
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.addEventListener("load", function () {
+            var myLandbot = new Landbot.Livechat({
+              configUrl:
+                "https://storage.googleapis.com/landbot.online/v3/H-2077778-NMBZMKEDCXG650C3/index.json",
+            });
+          });
+          s.src = "https://cdn.landbot.io/landbot-3/landbot-3.0.0.js";
+          var x = document.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      }
+
+      function showKitchenCleaningGuide() {
+        Swal.fire({
+          title: "Bắt đầu tư vấn dịch vụ vệ sinh phòng bếp",
+          html:
+            "Sau khi bạn đã xem xong gói dịch vụ vệ sinh phòng bếp của Clean Work, " +
+            "nếu bạn hài lòng, hãy nhấn vào biểu tượng Landbot ở góc dưới bên phải màn hình " +
+            "để chúng tôi có thể tư vấn và chăm sóc bạn kỹ lưỡng hơn.",
+          imageUrl: "images/landbot.png",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Hình ảnh minh họa",
+          confirmButtonText: "Tiếp tục",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Add action for next step here
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Clean Work HTML CSS Template</title>
+
+    <!-- CSS FILES -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/tooplate-clean-work.css" rel="stylesheet" />
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <style>
+      input[type="text"],
+      input[type="email"],
+      input[type="date"] {
+        padding: 12px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      select {
+        padding: 12px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        transform: scaleX(0);
+      }
+
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .contact-section {
+          flex-direction: column;
+        }
+
+        .contact-image,
+        #contact-form {
+          margin: 0;
+        }
+
+        .contact-image img {
+          max-width: 100%;
+        }
+      }
+
+      .contact-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+      }
+
+      .contact-image,
+      #contact-form {
+        flex: 1;
+        margin: 0 10px;
+      }
+
+      .contact-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      #contact-form {
+
+        max-width: 500px;
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .contact-section {
+          flex-direction: column;
+        }
+
+        .contact-image,
+        #contact-form {
+          margin: 0;
+        }
+
+        .contact-image img {
+          max-width: 100%;
+        }
+      }
+
+      .search-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .search-input {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid #ccc;
+        width: calc(100% - 120px);
+        margin-right: -1px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+      }
+
+      .search-button {
+        width: 100px;
+        height: 46px;
+        padding: 10px;
+        background: #4caf50;
+        color: white;
+        font-size: 17px;
+        border: 1px solid #ccc;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .search-button:hover {
+        background: #45a049;
+      }
+
+      .search-input:hover {
+        cursor: pointer;
+      }
+
+      /* CSS cho hướng dẫn từng bước */
+      .guided-action-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: none;
+      }
+
+      .guided-action-tooltip {
+        position: absolute;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+      }
+
+      .guided-action-tooltip p {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .guided-action-next-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #backToTopBtn {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      #backToTopBtn:hover {
+        background-color: #0056b3;
+      }
+      a:hover,
+      button:hover,
+      .nav-item:hover,
+      .search-button:hover,
+      input[type="text"]:hover,
+      input[type="email"]:hover,
+      input[type="date"]:hover,
+      select:hover {
+        outline: none;
+        border: none;
+      }
+
+      a,
+      button {
+        transition: background-color 0.3s ease;
+      }
+
+
+      :focus {
+        outline: 2px solid #007bff;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #nextBtn {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #main-title {
+        font-size: 24px;
+      }
+
+      .guided-action-tooltip {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+      }
+
+      .button {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .guided-action-tooltip {
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .guided-action-next-btn {
+        background-color: #007bff;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease;
+      }
+
+      .guided-action-next-btn:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .guided-action-next-btn:active {
+        background-color: #003d82;
+      }
+
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+
+      body {
+        top: 0px !important;
+      }
+      .goog-te-gadget-icon {
+        background-image: url("//translate.google.com/favicon.ico") !important;
+      }
+
+      /* CSS để căn chỉnh và tạo khoảng cách cho Google Translate */
+      #google_translate_element {
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        display: inline-block;
+      }
+
+      @media (max-width: 768px) {
+        #google_translate_element {
+          margin-top: 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="modalHuongDan" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="main-title">
+          Comprehensive Guide on How to Use and Book Cleaning Services with
+          Clean Work
+        </h2>
+        <div id="huongDanContent">
+          <div id="step1">
+            <p>
+              "Step 1: Please scroll down to the 'Our Best Offers' section to
+              view all the types of cleaning services provided by Clean Work."
+            </p>
+            <button class="nextBtn" data-step="1">Next</button>
+          </div>
+          <div id="step2" style="display: none">
+            <p>
+              "Step 2: Click on 'Learn More' to explore detailed information
+              about each service."
+            </p>
+            <button class="nextBtn" data-step="2">Next</button>
+          </div>
+
+          <!-- Step 3 Modal Content -->
+          <div id="step3" style="display: none">
+            <p>
+              "Step 3: Enter relevant keywords into the search bar to receive
+              suggestions for the services you are interested in."
+            </p>
+            <button class="nextBtn" data-step="3">Next</button>
+          </div>
+
+          <div id="step4" style="display: none">
+            <p>
+              "Step 4: To get detailed advice, click on the chatbot icon in the
+              lower right corner of the screen."
+            </p>
+            <div
+              id="landbotNotificationStep4"
+              style="display: flex; align-items: center; margin-top: 20px"
+            >
+              <img
+                src="images/landbot.png"
+                style="width: 60px; height: 50px; margin-right: 10px"
+                alt="Landbot Icon"
+              />
+              <p>
+                "To receive comprehensive and personalized advice, please click
+                on this chatbot icon in the lower right corner of the screen."
+              </p>
+            </div>
+            <button class="nextBtn" data-step="4">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 d-flex flex-wrap">
+            <p class="d-flex me-4 mb-0">
+              <i class="bi-house-fill me-2"></i>
+              One-Stop Cleaning Service
+            </p>
+
+            <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
+              <i class="bi-clock-fill me-2"></i>
+              <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
+            </p>
+
+            <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
+              <i class="site-header-icon bi-whatsapp me-2"></i>
+
+              <a href="tel: 110-220-9800" class="text-white">+84-56-7649206</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/bubbles.png" class="logo img-fluid" alt="" />
+
+          <span class="ms-2">Clean Work</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#section_5"
+                id="navbarLightDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Pages</a
+              >
+
+              <ul
+                class="dropdown-menu dropdown-menu-light"
+                aria-labelledby="navbarLightDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="services.html">Our Services</a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="coming-soon.html"
+                    >Coming Soon</a
+                  >
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="page-404.html">Page 404</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item ms-3">
+              <a
+                class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn"
+                id="getStartedBtn"
+                href="#"
+                >Get started</a
+              >
+            </li>
+          </ul>
+
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section
+        class="hero-section hero-section-full-height d-flex justify-content-center align-items-center"
+      >
+        <div class="section-overlay"></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-12 text-center mx-auto">
+              <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
+                <span>We clean your</span>
+                <span class="cd-words-wrapper">
+                  <b class="is-visible">House</b>
+                  <b>Office</b>
+                  <b>Kitchen</b>
+                </span>
+              </h1>
+
+              <a
+                class="custom-btn btn button button--atlas smoothscroll me-3"
+                href="#intro-section"
+              >
+                <span>Introduction</span>
+
+                <div class="marquee" aria-hidden="true">
+                  <div class="marquee__inner">
+                    <span>Introduction</span>
+                    <span>Introduction</span>
+                    <span>Introduction</span>
+                    <span>Introduction</span>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                class="custom-btn custom-border-btn custom-btn-bg-white btn button button--pan smoothscroll"
+                href="#services-section"
+              >
+                <span>Explore Services</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,224L40,229.3C80,235,160,245,240,250.7C320,256,400,256,480,240C560,224,640,192,720,176C800,160,880,160,960,138.7C1040,117,1120,75,1200,80C1280,85,1360,139,1400,165.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+          ></path>
+        </svg>
+      </section>
+
+      <section class="intro-section" id="intro-section">
+        <div class="container">
+          <div class="row justify-content-lg-center align-items-center">
+            <div class="col-lg-6 col-12">
+              <h2 class="mb-4">Reliable & Fast Cleaning Services</h2>
+
+              <p>
+                At <strong>Clean Work</strong>, we take pride in offering
+                professional and efficient cleaning solutions, suitable for all
+                spaces from homes to offices. Our experienced and skilled team
+                will ensure that your living and working spaces are clean and
+                airy.
+              </p>
+              <p>
+                For more details about our services and pricing, please
+                <a href="contact.html">contact us</a>. We are always ready to
+                serve and advise you on the best solutions.
+              </p>
+              <p>
+                To learn more about our cleaning service packages, and how we
+                can make your living and working spaces cleaner and more
+                refreshing, please <a href="contact.html">contact us</a>. We are
+                ready to listen and meet all your requirements. Thank you for
+                considering Clean Work's services.
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-12 custom-block-wrap">
+              <img
+                src="images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png"
+                class="img-fluid"
+              />
+
+              <div class="custom-block d-flex flex-column">
+                <h6 class="text-white mb-3">
+                  Need Support? <br />
+                  Contact us now:
+                </h6>
+
+                <div class="search-container">
+                  <input
+                    type="text"
+                    placeholder="Search.."
+                    name="search"
+                    class="search-input"
+                  />
+                  <button type="submit" class="search-button">Search</button>
+                  <div class="suggestions"></div>
+                </div>
+                <p class="d-flex mb-0">
+                  <i class="bi-telephone-fill custom-icon me-2"></i>
+                  <a href="tel: 110-220-9800"> +84-56-7649206 </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="services-section section-padding section-bg"
+        id="services-section"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-4">Our best offers</h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-thumb">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="services-image-wrap">
+                      <a href="services-detail.html">
+                        <img
+                          src="images/services/people-taking-care-office-cleaning.jpg"
+                          class="services-image img-fluid"
+                          alt=""
+                        />
+                        <img
+                          src="images/services/person-taking-care-office.jpg"
+                          class="services-image services-image-hover img-fluid"
+                          alt=""
+                        />
+
+                        <div class="services-icon-wrap">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <p class="text-white mb-0">
+                              <i class="bi-cash me-2"></i>
+                              $820
+                            </p>
+
+                            <p class="text-white mb-0">
+                              <i class="bi-clock-fill me-2"></i>
+                              5 hrs
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-7 col-md-7 col-12 d-flex align-items-center"
+                  >
+                    <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                      <h4 class="services-title mb-1 mb-lg-2">
+                        <a
+                          class="services-title-link"
+                          href="services-detail.html"
+                          >Office Cleaning</a
+                        >
+                      </h4>
+
+                      <p>
+                        Best Cleaning Service Provider Ipsum dolor sit
+                        consectetur kengan
+                      </p>
+
+                      <div class="d-flex flex-wrap align-items-center">
+                        <div class="reviews-icons">
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star"></i>
+                          <i class="bi-star"></i>
+                        </div>
+
+                        <a
+                          href="services-detail.html"
+                          class="custom-btn btn button button--atlas mt-2 ms-auto"
+                        >
+                          <span>Learn More</span>
+
+                          <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-thumb">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="services-image-wrap">
+                      <a href="services-detail.html">
+                        <img
+                          src="images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg"
+                          class="services-image img-fluid"
+                          alt=""
+                        />
+                        <img
+                          src="images/services/woman-holding-rag-detergent-cleaning-cooker.jpg"
+                          class="services-image services-image-hover img-fluid"
+                          alt=""
+                        />
+
+                        <div class="services-icon-wrap">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <p class="text-white mb-0">
+                              <i class="bi-cash me-2"></i>
+                              $640
+                            </p>
+
+                            <p class="text-white mb-0">
+                              <i class="bi-clock-fill me-2"></i>
+                              4 hrs
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-7 col-md-7 col-12 d-flex align-items-center"
+                  >
+                    <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                      <h4 class="services-title mb-1 mb-lg-2">
+                        <a
+                          class="services-title-link"
+                          href="services-detail.html"
+                          >Kitchen Cleaning</a
+                        >
+                      </h4>
+
+                      <p>
+                        Best Cleaning Service Provider Ipsum dolor sit
+                        consectetur kengan
+                      </p>
+
+                      <div class="d-flex flex-wrap align-items-center">
+                        <div class="reviews-icons">
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                        </div>
+
+                        <a
+                          href="kitchen-detail.html"
+                          class="custom-btn btn button button--atlas mt-2 ms-auto"
+                        >
+                          <span>Learn More</span>
+
+                          <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-thumb mb-lg-0">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="services-image-wrap">
+                      <a href="services-detail.html">
+                        <img
+                          src="images/services/man-polishing-car-inside-car-service.jpg"
+                          class="services-image img-fluid"
+                          alt=""
+                        />
+                        <img
+                          src="images/services/man-polishing-car-inside.jpg"
+                          class="services-image services-image-hover img-fluid"
+                          alt=""
+                        />
+
+                        <div class="services-icon-wrap">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <p class="text-white mb-0">
+                              <i class="bi-cash me-2"></i>
+                              $240
+                            </p>
+
+                            <p class="text-white mb-0">
+                              <i class="bi-clock-fill me-2"></i>
+                              2 hrs
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-7 col-md-7 col-12 d-flex align-items-center"
+                  >
+                    <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                      <h4 class="services-title mb-1 mb-lg-2">
+                        <a class="services-title-link" href="car_washing.html"
+                          >Car Washing</a
+                        >
+                      </h4>
+
+                      <p>
+                        Best Cleaning Service Provider Ipsum dolor sit
+                        consectetur kengan
+                      </p>
+
+                      <div class="d-flex flex-wrap align-items-center">
+                        <div class="reviews-icons">
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                        </div>
+
+                        <a
+                          href="car_washing.html"
+                          class="custom-btn btn button button--atlas mt-2 ms-auto"
+                        >
+                          <span>Learn More</span>
+
+                          <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="services-thumb mb-lg-0">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="services-image-wrap">
+                      <a href="services-detail.html">
+                        <img
+                          src="images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg"
+                          class="services-image img-fluid"
+                          alt=""
+                        />
+                        <img
+                          src="images/services/close-up-mop-cleaning-industrial-plant-floor.jpg"
+                          class="services-image services-image-hover img-fluid"
+                          alt=""
+                        />
+
+                        <div class="services-icon-wrap">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <p class="text-white mb-0">
+                              <i class="bi-cash me-2"></i>
+                              $6,800
+                            </p>
+
+                            <p class="text-white mb-0">
+                              <i class="bi-clock-fill me-2"></i>
+                              30 hrs
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-7 col-md-7 col-12 d-flex align-items-center"
+                  >
+                    <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                      <h4 class="services-title mb-1 mb-lg-2">
+                        <a class="services-title-link" href="factory.html"
+                          >Factory Cleaning</a
+                        >
+                      </h4>
+
+                      <p>
+                        Best Cleaning Service Provider Ipsum dolor sit
+                        consectetur kengan
+                      </p>
+
+                      <div class="d-flex flex-wrap align-items-center">
+                        <div class="reviews-icons">
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star-fill"></i>
+                          <i class="bi-star"></i>
+                        </div>
+
+                        <a
+                          href="factory.html"
+                          class="custom-btn btn button button--atlas mt-2 ms-auto"
+                        >
+                          <span>Learn More</span>
+
+                          <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                              <span>Learn More</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-section section-padding section-bg">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-12 text-center">
+              <h2 class="text-white mb-4">Satisfied Customers</h2>
+            </div>
+
+            <div class="col-lg-4 col-12">
+              <div class="featured-block">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="images/avatar/happy-customer-01.jpg"
+                    class="avatar-image img-fluid"
+                  />
+
+                  <div class="ms-3">
+                    <h4 class="mb-0">Marie</h4>
+
+                    <div class="reviews-icons mb-1">
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-0">
+                  "Excellent cleaning service! The staff is very professional
+                  and thorough. I am satisfied with the results and will
+                  continue to use this service."
+                </p>
+              </div>
+
+              <div class="featured-block mb-lg-0">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="images/avatar/happy-customer-02.jpg"
+                    class="avatar-image img-fluid"
+                  />
+
+                  <div class="ms-3">
+                    <h4 class="mb-0">Nana</h4>
+
+                    <div class="reviews-icons mb-1">
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-0">
+                  "I am very satisfied with the service. Everything is clean and
+                  tidy."
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-12">
+              <div class="featured-block">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="images/avatar/happy-customer-03.jpg"
+                    class="avatar-image img-fluid"
+                  />
+
+                  <div class="ms-3">
+                    <h4 class="mb-0">Elon</h4>
+
+                    <div class="reviews-icons mb-1">
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-0">
+                  "High-quality service, friendly and professional staff."
+                </p>
+              </div>
+
+              <div class="featured-block mb-lg-0">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="images/avatar/happy-customer-04.jpg"
+                    class="avatar-image img-fluid"
+                  />
+
+                  <div class="ms-3">
+                    <h4 class="mb-0">Josh</h4>
+
+                    <div class="reviews-icons mb-1">
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star"></i>
+                      <i class="bi-star"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-0">
+                  "Great service! I will continue to use and recommend to
+                  friends."
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-12">
+              <div class="featured-block">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="images/avatar/happy-customer-05.jpg"
+                    class="avatar-image img-fluid"
+                  />
+
+                  <div class="ms-3">
+                    <h4 class="mb-0">Katie</h4>
+
+                    <div class="reviews-icons mb-1">
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-0">
+                  "I am really impressed with the customer care and the results
+                  of their work."
+                </p>
+              </div>
+
+              <div class="featured-block mb-lg-0">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="images/avatar/happy-customer-06.jpg"
+                    class="avatar-image img-fluid"
+                  />
+
+                  <div class="ms-3">
+                    <h4 class="mb-0">Shai</h4>
+
+                    <div class="reviews-icons mb-1">
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star-fill"></i>
+                      <i class="bi-star"></i>
+                      <i class="bi-star"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-0">
+                  "Thank you for bringing cleanliness and comfort to my home."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners-section">
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12 col-12">
+              <h4 class="partners-section-title bg-white shadow-lg">
+                Trusted by companies
+              </h4>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/toprak-leasing.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/glorix.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/woocommerce.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/rolf-leasing.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+              <img
+                src="images/partners/unilabs.svg"
+                class="partners-image img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <div class="contact-section">
+      <form id="contact-form">
+      </form>
+
+      <div class="contact-image">
+        <img src="images/ve-sinh-nha-moi-xay-4.jpg" alt="Hình ảnh mô tả" />
+      </div>
+    </div> -->
+
+    <!-- <form id="contact-form">
+      <h2>Liên hệ đặt dịch vụ</h2>
+
+      <label>Họ tên</label>
+      <input type="text" name="name" />
+
+      <label>Số điện thoại</label>
+      <input type="text" name="phone" />
+
+      <label>Địa chỉ</label>
+      <input type="text" name="address" />
+
+      <label>Loại hình dịch vụ</label>
+      <select name="service">
+        <option>Lau dọn nhà cửa</option>
+        <option>Lau kính</option>
+        <option>Giặt thảm</option>
+      </select>
+
+      <label>Ngày giờ đặt dịch vụ</label>
+      <input type="datetime-local" name="datetime" />
+
+      <button type="submit">Gửi yêu cầu</button>
+    </form> -->
+
+    <div class="contact-section" id="contact-section">
+      <div class="contact-image">
+        <img src="images/ve-sinh-nha-moi-xay-4.jpg" alt="Descriptive image" />
+      </div>
+      <form id="contact-form">
+        <h2>Contact for Service Booking</h2>
+
+        <label>Name</label>
+        <input type="text" name="name" />
+
+        <label>Phone Number</label>
+        <input type="text" name="phone" />
+
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Address</label>
+        <input type="text" name="address" />
+
+        <label>Type of Service</label>
+        <select name="service">
+          <option>Office Cleaning</option>
+          <option>Kitchen Cleaning</option>
+          <option>Car Washing</option>
+
+          <option>Factory Cleaning</option>
+        </select>
+
+        <label>Date and Time for Service</label>
+        <input type="datetime-local" name="datetime" />
+
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
+            <div>
+              <img src="images/bubbles.png" class="logo img-fluid" alt="" />
+            </div>
+
+            <ul class="footer-menu d-flex flex-wrap ms-5">
+              <li class="footer-menu-item">
+                <a href="about.html" class="footer-menu-link">About Us</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Blog</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Reviews</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="contact.html" class="footer-menu-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+            <h5 class="site-footer-title mb-3">Our Services</h5>
+
+            <ul class="footer-menu">
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  House Cleaning
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="car_washing.html" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Car Washing
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Laundry
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="services-detail.html" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Office Cleaning
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Toilet Cleaning
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+            <h5 class="site-footer-title mb-3">Office</h5>
+
+            <p class="text-white d-flex mt-3 mb-2">
+              <i class="bi-geo-alt-fill me-2"></i>
+              Neighborhood 4, Phuoc Dan Town, Ninh Phuoc District, Ninh Thuan
+              Province
+            </p>
+
+            <p class="text-white d-flex mb-2">
+              <i class="bi-telephone-fill me-2"></i>
+
+              <a href="tel: +84-56-7649206" class="site-footer-link">
+                +84-56-7649206
+              </a>
+            </p>
+
+            <p class="text-white d-flex">
+              <i class="bi-envelope-fill me-2"></i>
+
+              <a
+                href="mailto:22130116@st.hcmuaf.edu.vn"
+                class="site-footer-link"
+              >
+                22130116@st.hcmuaf.edu.vn
+              </a>
+            </p>
+
+            <ul class="social-icon mt-4">
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link button button--skoll">
+                  <span></span>
+                  <span class="bi-twitter"></span>
+                </a>
+              </li>
+
+              <li class="social-icon-item">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088292157574"
+                  class="social-icon-link button button--skoll"
+                >
+                  <span></span>
+                  <span class="bi-facebook"></span>
+                </a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link button button--skoll">
+                  <span></span>
+                  <span class="bi-instagram"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-6 mt-3 mt-lg-0 mt-md-0">
+            <div class="featured-block">
+              <h5 class="text-white mb-3">Service Hours</h5>
+
+              <strong class="d-block text-white mb-1">Mon - Fri</strong>
+
+              <p class="text-white mb-3">8:00 AM - 5:30 PM</p>
+
+              <strong class="d-block text-white mb-1">Sat</strong>
+
+              <p class="text-white mb-0">6:00 AM - 2:30 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <p class="copyright-text mb-0">
+                © Copyright 2023 by Hoang Khang. All Rights Reserved
+                22130116@st.hcmuaf.edu.vn
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-12 text-end">
+              <p class="copyright-text mb-0">
+                Designed by
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088292157574"
+                  target="_parent"
+                  >Nguyễn Lê Hoàng Khang</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      // Lấy giá trị từ input text
+      const name = document.getElementById("name").value;
+
+      // Lấy giá trị từ checkbox
+      const agree = document.getElementById("agree").checked;
+
+      // Xử lý sự kiện cho dropdown
+      const citySelect = document.getElementById("city");
+      citySelect.addEventListener("change", function () {
+        const city = this.value;
+        // code xử lý khi thay đổi giá trị
+      });
+
+      const navItems = document.querySelectorAll(".nav-item");
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          navItems.forEach((item) => item.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = link.getAttribute("href");
+
+          document.querySelector(href).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      const currentPage = location.pathname;
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        if (link.href === currentPage) {
+          link.classList.add("active");
+        }
+      });
+
+      // Hàm kiểm tra định dạng email
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      // Hàm kiểm tra định dạng số điện thoại
+      function isValidPhoneNumber(phone) {
+        const phoneRegex = /^[0-9]{10,15}$/; // Số điện thoại từ 10 đến 15 chữ số
+        return phoneRegex.test(phone);
+      }
+
+      // Hàm kiểm tra xem tất cả các trường trong form đã được điền chưa và có hợp lệ không
+      function validateForm(form) {
+        let isValid = true;
+        let message = "";
+
+        Array.from(form.elements).forEach((input) => {
+          if (input.required && input.value.trim() === "") {
+            isValid = false;
+            message += `Trường ${input.name} đang trống.\n`;
+          }
+
+          if (input.type === "email" && !isValidEmail(input.value)) {
+            isValid = false;
+            message += `Email không hợp lệ.\n`;
+          }
+
+          if (input.name === "phone" && !isValidPhoneNumber(input.value)) {
+            isValid = false;
+            message += `Số điện thoại không hợp lệ.\n`;
+          }
+
+          // Thêm các kiểm tra khác nếu cần
+        });
+
+        return { isValid, message };
+      }
+
+      // Hàm xử lý khi submit form
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        // Kiểm tra xem tất cả trường đã được điền và hợp lệ hay chưa
+        const { isValid, message } = validateForm(contactForm);
+
+        if (isValid) {
+          // Lấy dữ liệu từ form
+          const formData = new FormData(contactForm);
+          const data = Object.fromEntries(formData);
+
+          // Lưu dữ liệu vào localStorage
+          localStorage.setItem("contactFormData", JSON.stringify(data));
+
+          // Tạo đường link mailto
+          let mailtoLink = `mailto:22130116@st.hcmuaf.edu.vn?subject=Thông tin đặt dịch vụ&body=${encodeURIComponent(
+            JSON.stringify(data)
+          )}`;
+
+          // Chuyển hướng người dùng tới email
+          window.location.href = mailtoLink;
+        } else {
+          alert("Có lỗi xảy ra:\n" + message);
+        }
+      }
+
+      // Thêm event listener cho form
+      const contactForm = document.getElementById("contact-form");
+      contactForm.addEventListener("submit", handleSubmit);
+    </script>
+    <div class="guided-action-overlay" id="guidedActionOverlay">
+      <div class="guided-action-tooltip" id="guidedActionTooltip">
+        <p id="guidedActionText">Hướng dẫn sử dụng</p>
+        <span class="guided-action-next-btn" id="guidedActionNextBtn"
+          >Tiếp theo</span
+        >
+      </div>
+    </div>
+    <script>
+      window.addEventListener("mouseover", initLandbot, { once: true });
+      window.addEventListener("touchstart", initLandbot, { once: true });
+      var myLandbot;
+      function initLandbot() {
+        if (!myLandbot) {
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.addEventListener("load", function () {
+            var myLandbot = new Landbot.Livechat({
+              configUrl:
+                "https://storage.googleapis.com/landbot.online/v3/H-2077778-NMBZMKEDCXG650C3/index.json",
+            });
+          });
+          s.src = "https://cdn.landbot.io/landbot-3/landbot-3.0.0.js";
+          var x = document.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(contactForm);
+          const data = Object.fromEntries(formData);
+
+          if (!isValidEmail(data.email) || !isValidPhoneNumber(data.phone)) {
+            alert("Vui lòng nhập email và số điện thoại hợp lệ.");
+            return;
+          }
+
+          let mailtoLink = `mailto:22130116@st.hcmuaf.edu.vn?subject=Thông tin đặt dịch vụ&body=${encodeURIComponent(
+            "Họ tên: " +
+              data.name +
+              "\nEmail: " +
+              data.email +
+              "\nSố điện thoại: " +
+              data.phone +
+              "\nĐịa chỉ: " +
+              data.address +
+              "\nLoại hình dịch vụ: " +
+              data.service +
+              "\nNgày giờ đặt dịch vụ: " +
+              data.datetime
+          )}`;
+
+          window.location.href = mailtoLink;
+        });
+
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        function isValidPhoneNumber(phone) {
+          const phoneRegex = /^[0-9]{10,15}$/;
+          return phoneRegex.test(phone);
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".search-input");
+        const searchButton = document.querySelector(".search-button");
+
+        function handleSearch() {
+          const searchTerm = searchInput.value.toLowerCase();
+
+          // Định nghĩa một đối tượng để chứa các trang và từ khóa tương ứng
+          const searchMappings = {
+            "office cleaning": "services-detail.html",
+            "kitchen cleaning": "kitchen-detail.html",
+            "car washing": "car_washing.html",
+            "factory cleaning": "factory.html",
+            // Thêm các từ khóa và trang tương ứng khác ở đây
+          };
+
+          // Kiểm tra xem từ khóa có trong đối tượng searchMappings không
+          if (searchTerm in searchMappings) {
+            window.location.href = searchMappings[searchTerm];
+          } else {
+            // Hiển thị thông báo cho người dùng
+            alert("Không tìm thấy kết quả cho: " + searchTerm);
+          }
+        }
+
+        // Thêm event listeners
+        searchButton.addEventListener("click", handleSearch);
+        searchInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            handleSearch();
+          }
+        });
+      });
+    </script>
+
+    <script>
+      window.addEventListener("mouseover", initializeLandbot, { once: true });
+      window.addEventListener("touchstart", initializeLandbot, { once: true });
+      var myLandbot;
+
+      function initializeLandbot() {
+        if (!myLandbot) {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.addEventListener("load", function () {
+            myLandbot = new Landbot.Livechat({
+              configUrl:
+                "https://storage.googleapis.com/landbot.online/v3/H-2077778-NMBZMKEDCXG650C3/index.json",
+            });
+          });
+          script.src = "https://cdn.landbot.io/landbot-3/landbot-3.0.0.js";
+          var firstScript = document.getElementsByTagName("script")[0];
+          firstScript.parentNode.insertBefore(script, firstScript);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".search-input");
+        const suggestionsPanel = document.querySelector(".suggestions");
+
+        // Object containing keywords and corresponding URLs
+        const searchMappings = {
+          "Office Cleaning": "services-detail.html",
+          "Kitchen Cleaning": "kitchen-detail.html",
+          "Car Washing": "car_washing.html",
+          "Factory Cleaning": "factory.html",
+          // Add more keywords and URLs here
+        };
+
+        // Get a list of keywords from the object
+        const suggestions = Object.keys(searchMappings);
+
+        searchInput.addEventListener("input", function () {
+          const input = searchInput.value.toLowerCase();
+          suggestionsPanel.innerHTML = "";
+          const filteredSuggestions = suggestions.filter(function (suggestion) {
+            return suggestion.toLowerCase().startsWith(input);
+          });
+
+          filteredSuggestions.forEach(function (suggested) {
+            const div = document.createElement("div");
+            div.innerHTML = suggested;
+            div.addEventListener("click", function () {
+              // Redirect the user to the corresponding URL
+              window.location.href = searchMappings[suggested];
+            });
+            suggestionsPanel.appendChild(div);
+          });
+
+          if (input === "") {
+            suggestionsPanel.innerHTML = "";
+          }
+        });
+      });
+
+      // Backend Landbot
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("modalHuongDan");
+        const getStartedBtn = document.getElementById("getStartedBtn");
+        const closeSpan = document.getElementsByClassName("close")[0];
+        const steps = document.querySelectorAll(
+          ".modal-content div[id^='step']"
+        );
+
+        // Create a new notification element
+        const notificationDiv = document.createElement("div");
+        notificationDiv.setAttribute("id", "landbotNotification");
+        notificationDiv.style.cssText =
+          "position: fixed; bottom: 20px; right: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: none; align-items: center;";
+
+        // Add content to the notification element
+        const landbotImage = document.createElement("img");
+        landbotImage.src = "images/landbot.png"; // Path to your Landbot icon image
+        landbotImage.style.cssText =
+          "width: 50px; height: 50px; margin-right: 10px;";
+
+        const notificationText = document.createElement("span");
+        notificationText.textContent =
+          "To get more detailed information about our services, please click on this chatbot icon in the lower right corner of the screen.";
+
+        notificationDiv.appendChild(landbotImage);
+        notificationDiv.appendChild(notificationText);
+
+        // Add the notification element to the page
+        document.body.appendChild(notificationDiv);
+
+        getStartedBtn.onclick = function () {
+          modal.style.display = "block";
+          steps[0].style.display = "block";
+          steps[1].style.display = "none";
+          steps[2].style.display = "none";
+          steps[3].style.display = "none";
+        };
+
+        closeSpan.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+
+        document.querySelectorAll(".nextBtn").forEach((button) => {
+          button.addEventListener("click", function () {
+            const step = this.getAttribute("data-step");
+
+            if (step === "1") {
+              document
+                .getElementById("services-section")
+                .scrollIntoView({ behavior: "smooth" });
+              steps[0].style.display = "none";
+              steps[1].style.display = "block";
+            } else if (step === "2") {
+              document
+                .getElementById("intro-section")
+                .scrollIntoView({ behavior: "smooth" });
+              steps[1].style.display = "none";
+              steps[2].style.display = "block";
+            } else if (step === "3") {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+              steps[2].style.display = "none";
+              steps[3].style.display = "block";
+            } else if (step === "4") {
+              initializeLandbot();
+              showModalNotification();
+              modal.style.display = "none";
+            }
+          });
+        });
+
+        function showModalNotification() {
+          notificationDiv.style.display = "flex";
+
+          // Hide the notification after 3 seconds and show the next notification
+          setTimeout(function () {
+            notificationDiv.style.display = "none";
+
+            // Show the new notification
+
+            Swal.fire({
+              title: "Book Services with CleanWork",
+              html: `
+    <p>Step 5: To ensure that you have a great experience with CleanWork's services, we encourage you to take a moment to fill out the Contact form below...</p>
+    <img src="buoc5" width="200px" alt="Descriptive Alt Text" class="your-custom-class" />
+  `,
+              icon: "info",
+              confirmButtonText: "Ok",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                document
+                  .getElementById("contact-section")
+                  .scrollIntoView({ behavior: "smooth" });
+              }
+            });
+
+            // Navigate to the Contact section for service booking
+            document
+              .querySelector(".contact-section")
+              .scrollIntoView({ behavior: "smooth" });
+          }, 3000);
+        }
+      });
+
+      function changeLanguage(lang) {
+        fetch(lang + ".json")
+          .then((response) => response.json())
+          .then((translations) => {
+            document.querySelectorAll("[data-translate]").forEach((elem) => {
+              const key = elem.getAttribute("data-translate");
+              elem.textContent = translations[key];
+            });
+          });
+      }
+    </script>
+  </body>
+</html>

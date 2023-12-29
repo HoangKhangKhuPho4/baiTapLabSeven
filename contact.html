@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Contact | Bootstrap 5 Theme</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/tooplate-clean-work.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <style>
+      #backToTopBtn {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      #backToTopBtn:hover {
+        background-color: #0056b3;
+      }
+
+      #myLandbot {
+        width: 100vh;
+        height: 10vh;
+      }
+
+      #chatbotGuide {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none;
+      }
+
+      .goog-te-gadget-icon {
+        background-image: url("//translate.google.com/favicon.ico") !important;
+      }
+
+      #google_translate_element {
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        display: inline-block;
+      }
+
+      @media (max-width: 768px) {
+        #google_translate_element {
+          margin-top: 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+        }
+      }
+
+      body,
+      .form-control,
+      .custom-form {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 21px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 24px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+
+        body,
+        .form-control,
+        .custom-form {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="backToTopBtn" title="Go to top">⬆️</button>
+    <header class="site-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 d-flex flex-wrap">
+            <p class="d-flex me-4 mb-0">
+              <i class="bi-house-fill me-2"></i>
+              One-Stop Cleaning Service
+            </p>
+
+            <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
+              <i class="bi-clock-fill me-2"></i>
+              <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
+            </p>
+
+            <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
+              <i class="site-header-icon bi-whatsapp me-2"></i>
+
+              <a href="tel: +84-56-7649206 " class="text-white"
+                >+84-56-7649206</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/bubbles.png" class="logo img-fluid" alt="" />
+
+          <span class="ms-2">Clean Work</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#section_5"
+                id="navbarLightDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Pages</a
+              >
+
+              <ul
+                class="dropdown-menu dropdown-menu-light"
+                aria-labelledby="navbarLightDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="services.html">Our Services</a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="coming-soon.html"
+                    >Coming Soon</a
+                  >
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="page-404.html">Page 404</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Back To Home</a>
+            </li>
+
+            <li class="nav-item ms-3">
+              <a
+                class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn"
+                id="getStartedBtn"
+                href="#"
+                >Get started</a
+              >
+            </li>
+          </ul>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section
+        class="banner-section d-flex justify-content-center align-items-end"
+      >
+        <div class="section-overlay"></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-12">
+              <h1 class="text-white mb-lg-0">Contact</h1>
+            </div>
+
+            <div
+              class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto"
+            >
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Contact
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-12 me-auto mb-lg-0 mb-5">
+              <h2 class="my-3">We're happy to help</h2>
+
+              <p>
+                Best Cleaning Service is ready to serve you. Clean Work is a
+                professional website layout for your business.
+              </p>
+
+              <div class="contact-info bg-white shadow-lg">
+                <h3 class="mb-4">Contact Information</h3>
+
+                <h5 class="d-flex mt-3 mb-3">
+                  <i class="bi-geo-alt-fill custom-icon me-3"></i>
+                  Neighborhood 4, Phuoc Dan Town, Ninh Phuoc District, Ninh
+                  Thuan Province
+                </h5>
+
+                <h5 class="d-flex mb-3">
+                  <i class="bi-telephone-fill custom-icon me-3"></i>
+
+                  <a href="tel: 110-220-9800"> +84-56-7649206 </a>
+                </h5>
+
+                <h5 class="d-flex">
+                  <i class="bi-envelope-fill custom-icon me-3"></i>
+
+                  <a href="mailto:info@company.com"
+                    >22130116@st.hcmuaf.edu.vn
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <form
+                class="custom-form consulting-form bg-white shadow-lg mb-5 mb-lg-0"
+                method="post"
+                onsubmit="handleFormSubmit(event)"
+                id="quotationForm"
+                method="post"
+                role="form"
+              >
+                <div class="consulting-form-header d-flex align-items-center">
+                  <h3 class="mb-4">Get a Free Quotation</h3>
+                </div>
+
+                <div class="consulting-form-body">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                      <input
+                        type="text"
+                        name="volunteer-name"
+                        id="volunteer-name"
+                        class="form-control"
+                        placeholder="John Walker"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                      <input
+                        type="email"
+                        name="volunteer-email"
+                        id="volunteer-email"
+                        pattern="[^ @]*@[^ @]*"
+                        class="form-control"
+                        placeholder="yours@gmail.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <select
+                    class="form-select form-control"
+                    name="job-salary"
+                    id="job-salary"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Service Type</option>
+                    <option value="House cleaning">House cleaning</option>
+                    <option value="Car washing">Car washing</option>
+                    <option value="Office cleaning">Office cleaning</option>
+                    <option value="Factory cleaning">Factory cleaning</option>
+                  </select>
+
+                  <textarea
+                    name="volunteer-message"
+                    rows="3"
+                    class="form-control"
+                    id="volunteer-message"
+                    placeholder="Comment (Optional)"
+                  ></textarea>
+
+                  <div class="col-lg-6 col-md-10 col-8 mx-auto">
+                    <button type="submit" class="form-control">
+                      Submit Request
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
+            <div>
+              <img src="images/bubbles.png" class="logo img-fluid" alt="" />
+            </div>
+
+            <ul class="footer-menu d-flex flex-wrap ms-5">
+              <li class="footer-menu-item">
+                <a href="about.html" class="footer-menu-link">About Us</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Blog</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Reviews</a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="contact.html" class="footer-menu-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+            <h5 class="site-footer-title mb-3">Our Services</h5>
+
+            <ul class="footer-menu">
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  House Cleaning
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="car_washing.html" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Car Washing
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Laundry
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="services-detail.html" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Office Cleaning
+                </a>
+              </li>
+
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">
+                  <i
+                    class="bi-chevron-double-right footer-menu-link-icon me-2"
+                  ></i>
+                  Toilet Cleaning
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+            <h5 class="site-footer-title mb-3">Office</h5>
+
+            <p class="text-white d-flex mt-3 mb-2">
+              <i class="bi-geo-alt-fill me-2"></i>
+              Neighborhood 4, Phuoc Dan Town, Ninh Phuoc District, Ninh Thuan
+              Province
+            </p>
+
+            <p class="text-white d-flex mb-2">
+              <i class="bi-telephone-fill me-2"></i>
+
+              <a href="tel: +84-56-7649206" class="site-footer-link">
+                +84-56-7649206
+              </a>
+            </p>
+
+            <p class="text-white d-flex">
+              <i class="bi-envelope-fill me-2"></i>
+
+              <a
+                href="mailto:22130116@st.hcmuaf.edu.vn"
+                class="site-footer-link"
+              >
+                22130116@st.hcmuaf.edu.vn
+              </a>
+            </p>
+
+            <ul class="social-icon mt-4">
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link button button--skoll">
+                  <span></span>
+                  <span class="bi-twitter"></span>
+                </a>
+              </li>
+
+              <li class="social-icon-item">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088292157574"
+                  class="social-icon-link button button--skoll"
+                >
+                  <span></span>
+                  <span class="bi-facebook"></span>
+                </a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link button button--skoll">
+                  <span></span>
+                  <span class="bi-instagram"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-6 mt-3 mt-lg-0 mt-md-0">
+            <div class="featured-block">
+              <h5 class="text-white mb-3">Service Hours</h5>
+
+              <strong class="d-block text-white mb-1">Mon - Fri</strong>
+
+              <p class="text-white mb-3">8:00 AM - 5:30 PM</p>
+
+              <strong class="d-block text-white mb-1">Sat</strong>
+
+              <p class="text-white mb-0">6:00 AM - 2:30 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <p class="copyright-text mb-0">
+                © Copyright 2023 by Hoang Khang. All Rights Reserved
+                22130116@st.hcmuaf.edu.vn
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-12 text-end">
+              <p class="copyright-text mb-0">
+                Designed by
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088292157574"
+                  target="_parent"
+                  >Nguyễn Lê Hoàng Khang</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      window.addEventListener("mouseover", initLandbot, { once: true });
+      window.addEventListener("touchstart", initLandbot, { once: true });
+      var myLandbot;
+      function initLandbot() {
+        if (!myLandbot) {
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.addEventListener("load", function () {
+            var myLandbot = new Landbot.Livechat({
+              configUrl:
+                "https://storage.googleapis.com/landbot.online/v3/H-2077772-8E1K20WQWSR0EJMV/index.json",
+            });
+          });
+          s.src = "https://cdn.landbot.io/landbot-3/landbot-3.0.0.js";
+          var x = document.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      }
+    </script>
+
+    <script>
+      function handleFormSubmit(event) {
+        event.preventDefault();
+
+        var form = document.getElementById("quotationForm");
+        var name = form.querySelector('[name="volunteer-name"]').value;
+        var email = form.querySelector('[name="volunteer-email"]').value;
+        var serviceType = form.querySelector('[name="job-salary"]').value;
+        var message = form.querySelector('[name="volunteer-message"]').value;
+
+        // Tạo chuỗi query cho mailto
+        var mailtoLink = "mailto:22130116@st.hcmuaf.edu.vn";
+        mailtoLink +=
+          "?subject=" + encodeURIComponent("Quotation Request from " + name);
+        mailtoLink +=
+          "&body=" +
+          encodeURIComponent(
+            "Name: " +
+              name +
+              "\nEmail: " +
+              email +
+              "\nService Type: " +
+              serviceType +
+              "\nMessage: " +
+              message
+          );
+
+        // Chuyển hướng trình duyệt
+        window.location.href = mailtoLink;
+      }
+
+      function scrollToChatbot() {
+        var chatbotElement = document.querySelector(
+          "YOUR_CHATBOT_CONTAINER_ID_OR_CLASS"
+        );
+        if (chatbotElement) {
+          chatbotElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Thêm sự kiện click cho nút "Get started"
+        var getStartedBtn = document.getElementById("getStartedBtn");
+        if (getStartedBtn) {
+          getStartedBtn.addEventListener("click", function (e) {
+            e.preventDefault(); // Ngăn chặn hành vi mặc định của nút
+            var guideElement = document.getElementById("chatbotGuide");
+            if (guideElement) {
+              guideElement.style.display = "block"; // Hiển thị thông báo
+            }
+          });
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var getStartedBtn = document.getElementById("getStartedBtn");
+        if (getStartedBtn) {
+          getStartedBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Step 1: Chatbot Instructions
+            Swal.fire({
+              title: "Step 1: Chatbot Instructions",
+              text: "To contact and receive a quote from Clean Work, please use the chatbot in the bottom right corner of the screen.",
+              icon: "info",
+              imageUrl: "images/chatbot.png",
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: "Illustration of a chatbot",
+              confirmButtonText: "Continue",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                scrollToChatbot();
+
+                // Step 2: Encourage Form Submission
+                Swal.fire({
+                  title: "Step 2: Experience Exclusive Services",
+                  text: "Fill out the form below to experience our exclusive high-quality services available only at Clean Work.",
+                  icon: "info",
+                  confirmButtonText: "Go to Form",
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    scrollToForm();
+                  }
+                });
+              }
+            });
+          });
+        }
+      });
+
+      function scrollToChatbot() {
+        var chatbotElement = document.querySelector(
+          "YOUR_CHATBOT_CONTAINER_ID_OR_CLASS"
+        );
+        if (chatbotElement) {
+          chatbotElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function scrollToForm() {
+        var formElement = document.getElementById("quotationForm");
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function scrollToChatbot() {
+        var chatbotElement = document.querySelector(
+          "YOUR_CHATBOT_CONTAINER_ID_OR_CLASS"
+        );
+        if (chatbotElement) {
+          chatbotElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function scrollToForm() {
+        var formElement = document.getElementById("quotationForm");
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("quotationForm");
+        form.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault(); // Ngăn chặn hành động mặc định khi nhấn Enter
+            form.querySelector('[type="submit"]').click(); // Kích hoạt click nút Submit
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
